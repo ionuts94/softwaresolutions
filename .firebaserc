@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "softwaresolutions-2b122"
+  },
+  "targets": {
+    "softwaresolutions-2b122": {
+      "hosting": {
+        "webapp": [
+          "softwaresolutions-2b122"
+        ],
+        "home": [
+          "web-home-7f3d9"
+        ]
+      }
+    }
+  }
+}

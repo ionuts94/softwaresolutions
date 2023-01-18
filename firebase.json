@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "source": "functions",
+    "predeploy": []
+  },
+  "hosting": [
+    {
+      "public": "build",
+      "target": "webapp",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "public": "comms",
+      "target": "home",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}
