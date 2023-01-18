@@ -628,7 +628,32 @@ section {
 # Features
 --------------------------------------------------------------*/
 .features {
-  padding-top: 20px;
+  /* padding-top: 20px; */
+  position: relative;
+}
+
+.features:nth-child(odd) {
+  box-shadow: 0 2px 10px -8px;
+  border-bottom-left-radius: 40px;
+}
+
+.features:nth-child(even) {
+  box-shadow: 0 2px 10px -8px;
+  border-bottom-right-radius: 40px;
+}
+
+.features::before {
+  content: "";
+  width: 130px;
+  height: 4px;
+  background-color: #ffc451;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 50px;
+  box-shadow: 0 1px 5px -1px grey;
 }
 
 .features .icon-box {
@@ -1540,6 +1565,7 @@ section {
   border: 0;
   padding: 4px;
   width: calc(100% - 110px);
+  outline: none;
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit] {
@@ -1571,4 +1597,8 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+.bor-rad-4 {
+  border-radius: 4px;
 }
