@@ -1,33 +1,37 @@
 const functions = require("firebase-functions");
-
-const TWILIO_ACCOUNT_SID = functions.config().twilio.account_sid;
-const TWILIO_AUTH_TOKEN = functions.config().twilio.auth_token;
-const sms = require('twilio')(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
+const nodemailer = require('nodemailer');
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 
-function getSmsBody(companyName) {
-  return `
-Felicitari pentru infiintarea companiei ${companyName}! solutiionline.com va ofera oportunitatea de a va lansa compania pe internet pentru a beneficia te toate avantajele aduse de piata online!
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'ionutsv94@gmail.com',
+    pass: 'qcquitovjzpuipvo'
+  }
+});
 
-Un website crește sansa de sucess a companiei dumneavoastră cu pana la 70%, contactați-ne cat mai rapid pentru a incepe sa beneficiați de advantajele aduse de internet in cel mai scurt timp!
-`
-}
+exports.sendEmail = functions.firestore.document('messages/{messageId}').onCreate((snap, context) => {
+  const docData = snap.data();
 
-exports.loadData = functions.https.onCall(async (data, context) => {
-  console.log(data);
+  const mailOptions = {
+    from: `ionutsv94@gmail.com`,
+    to: ['ionut.s_94@yahoo.com', 'iordaighe.alin@gmail.com'],
+    subject: docData.subject,
+    text: `Name: ${docData.name}. User email: ${docData.email}. ${docData.message}`
+  };
 
-  const message = await sms.messages.create({
-    body: getSmsBody(data[0][1]),
-    messagingServiceSid: 'MG088b0a186b52a14c16a1a602257f9430',
-    from: "SolutiiOnline",
-    statusCallback: '',
-    to: '+4' + data[0][6]
-  })
+  console.log(`Sending email to ${docData.email}`);
 
-  console.log(message);
-
-  return data;
+  return transporter.sendMail(mailOptions, (error, data) => {
+    if (error) {
+      console.log(error)
+      return
+    }
+    console.log("Sent!")
+  });
 });
