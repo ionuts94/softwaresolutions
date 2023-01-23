@@ -32,6 +32,21 @@
 </head>
 
 <body>
+  <!-- Find more form section -->
+  <section class="find-more-section">
+    <div class="find-more-form">
+      <input name="name" type="text" class="form-control find-more-input" placeholder="Nume complet" />
+      <input name="company" type="text" class="find-more-input form-control" placeholder="Companie" />
+      <textarea class="form-control find-more-input" name="message" rows="5" placeholder="Mesaj" required></textarea>
+
+      <div class="form-result">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. Thank you!</div>
+      </div>
+      <button class="find-more-submit-button">Trimite mesaj</button>
+    </div>
+  </section>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
@@ -230,6 +245,7 @@
           număr extrem de mare de potențiali clienți și a face ca o companie nou înființată să devină un succes.
         </p>
       </div>
+      <button class="section-button">Aflați mai multe despre <br><strong>APLICAȚII WEB/WEBSITE</strong></button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Aplicatii mobile ======= -->
@@ -287,6 +303,7 @@
           companie.
         </p>
       </div>
+      <button class="section-button">Aflați mai multe despre <br><strong>APLICAȚII MOBILE</strong></button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Analiza datelor ======= -->
@@ -340,6 +357,7 @@
           clienții, ajutând astfel compania sa crească.
         </p>
       </div>
+      <button class="section-button">Aflați mai multe despre <br><strong>ANALIZA DATELOR</strong></button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Marketing ======= -->
@@ -389,6 +407,7 @@
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
             <img src="./assets/img/marketing-pic.gif" class="img-fluid bor-rad-4" alt="">
           </div>
+
         </div>
 
         <p>
@@ -396,6 +415,7 @@
           un loc permanent pe piață.
         </p>
       </div>
+      <button class="section-button">Aflați mai multe despre <br><strong>MARKETING</strong></button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Aplicatii web ======= -->
@@ -448,6 +468,7 @@
         </div>
 
       </div>
+      <button class="section-button">Aflați mai multe despre <br><strong>SEO</strong></button>
     </section><!-- End Features Section -->
 
     <!-- ======= Services Section ======= -->
@@ -522,7 +543,7 @@
 
         <div class="text-center">
           <h3>Dă-i Afacerii Tale un Impuls Puternic cu Ajutorul Serviciilor Noastre!</h3>
-          <p> Începe colaborarea cu noi chiar acum ți vezi cum afacerea ta devine mai profitabilă!</p>
+          <p> Începe colaborarea cu noi chiar acum și vezi cum afacerea ta devine mai profitabilă!</p>
           <a class="cta-btn" href="#">Cere oferta</a>
         </div>
 
@@ -1073,7 +1094,8 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" type="module"></script>
+  <script src="assets/js/animations.js"></script>
 
 </body>
 

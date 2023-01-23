@@ -32,6 +32,56 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/* Find more section */
+.find-more-section {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  background-color: rgba(203, 203, 203, 0.7);
+  display: flex;
+  justify-content: center;
+}
+
+.find-more-form {
+  width: 90%;
+  height: fit-content;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px gray;
+}
+
+.find-more-input {
+  margin: 20px 0;
+}
+
+.find-more-submit-button {
+  display: block;
+  margin: 20px auto;
+  padding: 1rem 2.2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffc451;
+  transition: 0.3s;
+}
+
+.find-more-submit-button:hover {
+  background-color: #e7af41;
+}
+
+@media only screen and (min-width: 600px) {
+  .find-more-section {
+    align-items: center;
+  }
+
+  .find-more-form {
+    width: 600px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -518,7 +568,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 60px 0 100px;
   overflow: hidden;
   scroll-margin-top: 100px;
 }
@@ -556,6 +606,32 @@ section {
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: #151515;
+}
+
+.section-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 25px;
+  width: fit-content;
+  padding: 0.4rem 2rem;
+  border-radius: 4px;
+  border: 2px solid #ffc451;
+  background: #ffc451;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0px 5px 5px -2px gray;
+  /* animation: custom-fade-up 1s ease 1.5s forwards; */
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+.section-button:hover {
+  color: #444444;
+  background-color: transparent;
+  bottom: 30px;
+  transform: scale(1.1);
 }
 
 /*--------------------------------------------------------------
@@ -1297,7 +1373,7 @@ section {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form .error-message {
+.error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1310,7 +1386,7 @@ section {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1319,14 +1395,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1601,4 +1677,16 @@ section {
 
 .bor-rad-4 {
   border-radius: 4px;
+}
+
+@keyframes custom-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
