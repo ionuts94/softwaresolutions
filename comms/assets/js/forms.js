@@ -1,13 +1,26 @@
 import { Form } from './classes/Form.js';
 
 export function handleFindMoreForm() {
+
+  const findMoreSection = document.querySelector('.find-more-section');
+  const closeModalBtn = document.querySelector('.close-form');
+
   const formInputs = document.querySelectorAll('.find-more-input');
   const loading = document.querySelector('.loading');
   const error = document.querySelector('.error-message');
   const sent = document.querySelector('.sent-message');
 
-  const form = new Form(formInputs, null, loading, error, sent);
-  form.sendFormData();
+  const form = new Form(formInputs, loading, error, sent);
+
+  closeModalBtn.addEventListener('click', () => {
+    findMoreSection.style.animation = 'form-fade-up 0.3s ease-in-out forwards';
+    setTimeout(() => {
+      findMoreSection.style.display = 'none';
+      form.resetFormStatus();
+    }, 300);
+  })
+
+  return form;
 }
 
 export function handleContactForm() {

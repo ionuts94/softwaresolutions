@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="https://kit.fontawesome.com/4c1f98b072.js" crossorigin="anonymous"></script>
 
   <title>Software Solutions</title>
   <meta content="" name="description">
@@ -35,7 +36,12 @@
   <!-- Find more form section -->
   <section class="find-more-section">
     <div class="find-more-form">
+      <button class="close-form">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <input name="name" type="text" class="form-control find-more-input" placeholder="Nume complet" />
+      <input name="email" type="email" class="form-control find-more-input" placeholder="Email" />
       <input name="company" type="text" class="find-more-input form-control" placeholder="Companie" />
       <textarea class="form-control find-more-input" name="message" rows="5" placeholder="Mesaj" required></textarea>
 
@@ -245,7 +251,10 @@
           număr extrem de mare de potențiali clienți și a face ca o companie nou înființată să devină un succes.
         </p>
       </div>
-      <button class="section-button">Aflați mai multe despre <br><strong>APLICAȚII WEB/WEBSITE</strong></button>
+      <button class="section-button" data-pre-filled-message='Mesaj predefinit pentru aplicatiile web'>
+        Aflați mai multe despre <br>
+        <strong>APLICAȚII WEB/WEBSITE</strong>
+      </button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Aplicatii mobile ======= -->
@@ -303,7 +312,10 @@
           companie.
         </p>
       </div>
-      <button class="section-button">Aflați mai multe despre <br><strong>APLICAȚII MOBILE</strong></button>
+      <button data-pre-filled-message='Mesaj predefinit pentru aplicatiile mobile' class="section-button">
+        Aflați mai multe despre <br>
+        <strong>APLICAȚII MOBILE</strong>
+      </button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Analiza datelor ======= -->
@@ -357,7 +369,10 @@
           clienții, ajutând astfel compania sa crească.
         </p>
       </div>
-      <button class="section-button">Aflați mai multe despre <br><strong>ANALIZA DATELOR</strong></button>
+      <button data-pre-filled-message='Mesaj predefinit pentru analiza datelor' class="section-button">
+        Aflați mai multe despre <br>
+        <strong>ANALIZA DATELOR</strong>
+      </button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Marketing ======= -->
@@ -415,7 +430,10 @@
           un loc permanent pe piață.
         </p>
       </div>
-      <button class="section-button">Aflați mai multe despre <br><strong>MARKETING</strong></button>
+      <button data-pre-filled-message='Mesaj predefinit pentru marketing' class="section-button">
+        Aflați mai multe despre <br>
+        <strong>MARKETING</strong>
+      </button>
     </section><!-- End Features Section -->
 
     <!-- ======= Features Section - Aplicatii web ======= -->
@@ -468,7 +486,10 @@
         </div>
 
       </div>
-      <button class="section-button">Aflați mai multe despre <br><strong>SEO</strong></button>
+      <button data-pre-filled-message='Mesaj predefinit pentru aplicatiile seo' class="section-button">
+        Aflați mai multe despre <br>
+        <strong>SEO</strong>
+      </button>
     </section><!-- End Features Section -->
 
     <!-- ======= Services Section ======= -->

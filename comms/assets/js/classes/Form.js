@@ -3,16 +3,11 @@ import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/fi
 
 export class Form {
   elements = [];
-  formData = {
-    created: new Date()
-  };
 
-  constructor(elements, submitButton, loadingElement, errorElement, successElement) {
+  constructor(elements, loadingElement, errorElement, successElement) {
     elements.forEach(element => {
-      this.formData[element.name] = element.value;
       this.elements.push(element);
     });
-    this.submitButton = submitButton;
     this.loadingElement = loadingElement;
     this.errorElement = errorElement;
     this.successElement = successElement;
@@ -52,11 +47,26 @@ export class Form {
     })
   }
 
+  resetFormStatus() {
+    this.handleShowLoader(false);
+    this.handleShowError(false);
+    this.handleShowSuccess(false);
+  }
+
   async sendFormData() {
+    console.log(this);
     this.handleShowLoader(true);
 
+    let formData = {
+      created: new Date()
+    };
+
+    this.elements.forEach(element => {
+      formData[element.name] = element.value;
+    });
+
     try {
-      const docRef = await addDoc(collection(firestore, "messages"), this.formData);
+      const docRef = await addDoc(collection(firestore, "messages"), formData);
       this.handleShowLoader(false);
       this.resetFormFields();
       this.handleShowSuccess('Mesajul dumneavoastră a fost trimis. Veți fi contactat de unul dintre colegii noștri in cel mai scurt timp. Va mulțumim!');

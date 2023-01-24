@@ -1,10 +1,24 @@
 import { handleContactForm, handleFindMoreForm } from "./forms.js";
 
 const contactFormSubmitButton = document.getElementById('submit-button');
-const findMoreFormSubmitButton = document.querySelector('.find-more-submit-button');
+const findMoreButtons = document.querySelectorAll('.section-button');
+const findMoreSection = document.querySelector('.find-more-section');
+const findMoreSubmitButton = document.querySelector('.find-more-submit-button');
 
 contactFormSubmitButton.addEventListener('click', handleContactForm);
-findMoreFormSubmitButton.addEventListener('click', handleFindMoreForm);
+
+let findMoreForm = handleFindMoreForm();
+findMoreSubmitButton.addEventListener('click', () => findMoreForm.sendFormData());
+
+findMoreButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    findMoreSection.style.display = 'flex';
+    findMoreSection.style.animation = 'form-fade-down 0.3s ease-in-out forwards';
+
+  })
+});
+
+
 
 (function () {
   "use strict";

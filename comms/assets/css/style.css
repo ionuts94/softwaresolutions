@@ -40,8 +40,8 @@ h6 {
   top: 0;
   left: 0;
   z-index: 1050;
-  background-color: rgba(203, 203, 203, 0.7);
-  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
   justify-content: center;
 }
 
@@ -49,9 +49,10 @@ h6 {
   width: 90%;
   height: fit-content;
   background-color: white;
-  padding: 30px 20px;
+  padding: 50px 20px 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px gray;
+  position: relative;
 }
 
 .find-more-input {
@@ -70,6 +71,17 @@ h6 {
 
 .find-more-submit-button:hover {
   background-color: #e7af41;
+}
+
+.close-form {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 22px;
+  color: #484848;
+  position: absolute;
+  right: 15px;
+  top: 10px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1688,5 +1700,30 @@ section {
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes form-fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-550px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes form-fade-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-550px);
   }
 }
