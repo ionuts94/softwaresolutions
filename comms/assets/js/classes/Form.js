@@ -2,15 +2,19 @@ import { firestore } from "../firebase.js";
 import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 
 export class Form {
-  elements = [];
+  elements = {};
 
   constructor(elements, loadingElement, errorElement, successElement) {
     elements.forEach(element => {
-      this.elements.push(element);
+      this.elements[element.name] = element;
     });
     this.loadingElement = loadingElement;
     this.errorElement = errorElement;
     this.successElement = successElement;
+  }
+
+  setElementProperty(key, value) {
+    this.elements[key].value = value;
   }
 
   handleShowLoader(isLoading) {
@@ -42,9 +46,9 @@ export class Form {
   }
 
   resetFormFields() {
-    this.elements.forEach(element => {
-      element.value = '';
-    })
+    for (let key in this.elements) {
+      this.elements[key].value = '';
+    }
   }
 
   resetFormStatus() {
@@ -54,16 +58,15 @@ export class Form {
   }
 
   async sendFormData() {
-    console.log(this);
     this.handleShowLoader(true);
 
     let formData = {
-      created: new Date()
+      created: new Date(),
     };
 
-    this.elements.forEach(element => {
-      formData[element.name] = element.value;
-    });
+    for (let key in this.elements) {
+      formData[key] = this.elements[key].value;
+    }
 
     try {
       const docRef = await addDoc(collection(firestore, "messages"), formData);

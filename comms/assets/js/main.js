@@ -14,7 +14,10 @@ findMoreButtons.forEach(button => {
   button.addEventListener('click', () => {
     findMoreSection.style.display = 'flex';
     findMoreSection.style.animation = 'form-fade-down 0.3s ease-in-out forwards';
-
+    const key = button.dataset.for;
+    const message = button.dataset.preFilledMessage;
+    console.dir(button);
+    findMoreForm.setElementProperty(key, message);
   })
 });
 

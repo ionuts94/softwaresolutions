@@ -17,6 +17,7 @@ export function handleFindMoreForm() {
     setTimeout(() => {
       findMoreSection.style.display = 'none';
       form.resetFormStatus();
+      form.resetFormFields();
     }, 300);
   })
 
@@ -29,14 +30,14 @@ export function handleContactForm() {
   const email = document.getElementById('email');
   const subject = document.getElementById('subject');
   const message = document.getElementById('form-message');
-  const loading = document.querySelector('.loading');
-  const error = document.querySelector('.error-message');
-  const sent = document.querySelector('.sent-message');
+  const loading = document.getElementById('contact-form-loading');
+  const error = document.getElementById('contact-form-error');
+  const sent = document.getElementById('contact-form-success');
+
 
   const form = new Form([
     name, email, subject, message
   ],
-    null,
     loading,
     error,
     sent
