@@ -1,27 +1,37 @@
-import { handleContactForm, handleFindMoreForm } from "./forms.js";
+import { handleContactForm, handleCreateFindMoreForm, handleCreateAskForQuoteForm } from "./forms.js";
 
 const contactFormSubmitButton = document.getElementById('submit-button');
+const modalSection = document.querySelector('.modal-section');
+const askForQuoteBtn = document.querySelector('.get-started-btn');
 const findMoreButtons = document.querySelectorAll('.section-button');
-const findMoreSection = document.querySelector('.find-more-section');
-const findMoreSubmitButton = document.querySelector('.find-more-submit-button');
+
+askForQuoteBtn.addEventListener('click', () => {
+  showModal();
+  findMoreForm = handleCreateAskForQuoteForm();
+})
 
 contactFormSubmitButton.addEventListener('click', handleContactForm);
 
-let findMoreForm = handleFindMoreForm();
-findMoreSubmitButton.addEventListener('click', () => findMoreForm.sendFormData());
-
+let findMoreForm;
 findMoreButtons.forEach(button => {
   button.addEventListener('click', () => {
-    findMoreSection.style.display = 'flex';
-    findMoreSection.style.animation = 'form-fade-down 0.3s ease-in-out forwards';
-    const key = button.dataset.for;
-    const message = button.dataset.preFilledMessage;
-    console.dir(button);
-    findMoreForm.setElementProperty(key, message);
+    showModal();
+    findMoreForm = handleCreateFindMoreForm(button);
   })
 });
 
+export function showModal() {
+  modalSection.style.display = 'flex';
+  modalSection.style.animation = 'form-fade-down 0.3s ease-in-out forwards';
+}
 
+export function hideModal(onModalHidden) {
+  modalSection.style.animation = 'form-fade-up 0.3s ease-in-out forwards';
+  setTimeout(() => {
+    modalSection.style.display = 'none';
+    onModalHidden();
+  }, 300);
+}
 
 (function () {
   "use strict";

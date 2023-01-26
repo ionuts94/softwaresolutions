@@ -33,7 +33,7 @@ h6 {
 }
 
 /* Find more section */
-.find-more-section {
+.modal-section {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -84,8 +84,29 @@ h6 {
   top: 10px;
 }
 
+.service-select-container {
+  padding: 10px 6px;
+  color: var(--bs-gray);
+}
+
+#services-select {
+  margin-left: 5px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 2px solid gainsboro;
+  outline: none;
+  color: var(--bs-gray-800);
+  position: relative;
+}
+
+#services-select.dropdown {
+  position: absolute;
+  bottom: -50px !important;
+  left: 0;
+}
+
 @media only screen and (min-width: 600px) {
-  .find-more-section {
+  .modal-section {
     align-items: center;
   }
 
@@ -236,6 +257,7 @@ h6 {
   font-size: 14px;
   display: inline-block;
   border: 2px solid #ffc451;
+  background-color: transparent;
 }
 
 .get-started-btn:hover {

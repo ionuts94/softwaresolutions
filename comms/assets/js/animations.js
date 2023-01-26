@@ -1,8 +1,6 @@
 const sectionButtons = document.querySelectorAll('.section-button');
 
 document.addEventListener('scroll', function animationsObserver() {
-  console.log('scrolling');
-
   sectionButtons.forEach((btn, index) => {
     const bounding = btn.getBoundingClientRect();
     if (bounding.bottom < window.innerHeight) {
