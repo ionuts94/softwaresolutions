@@ -85,12 +85,12 @@ h6 {
 }
 
 .service-select-container {
-  padding: 10px 6px;
+  padding: 0px 6px;
   color: var(--bs-gray);
 }
 
 #services-select {
-  margin-left: 5px;
+  margin: 0 0 0 5px;
   padding: 7px 10px;
   border-radius: 4px;
   border: 2px solid gainsboro;
