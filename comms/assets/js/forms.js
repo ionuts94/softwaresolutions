@@ -42,6 +42,7 @@ function injectFindMoreForm(parent) {
   <input name="name" type="text" class="form-control find-more-input" placeholder="Nume complet" />
   <input name="email" type="email" class="form-control find-more-input" placeholder="Email" />
   <input name="company" type="text" class="find-more-input form-control" placeholder="Companie" />
+  <input name="phone" type="text" class="find-more-input form-control" placeholder="Telefon" />
   <textarea class="form-control find-more-input" name="message" rows="5" placeholder="Mesaj" required></textarea>
 
   <div class="form-result">

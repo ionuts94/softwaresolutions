@@ -2,12 +2,14 @@ import { handleContactForm, handleCreateFindMoreForm, handleCreateAskForQuoteFor
 
 const contactFormSubmitButton = document.getElementById('submit-button');
 const modalSection = document.querySelector('.modal-section');
-const askForQuoteBtn = document.querySelector('.get-started-btn');
+const askForQuoteBtn = document.querySelectorAll('.get-started-btn');
 const findMoreButtons = document.querySelectorAll('.section-button');
 
-askForQuoteBtn.addEventListener('click', () => {
-  showModal();
-  findMoreForm = handleCreateAskForQuoteForm();
+askForQuoteBtn.forEach(button => {
+  button.addEventListener('click', () => {
+    showModal();
+    findMoreForm = handleCreateAskForQuoteForm();
+  })
 })
 
 contactFormSubmitButton.addEventListener('click', handleContactForm);
