@@ -3,6 +3,7 @@ import CsvInput from "../../components/CsvInput/CsvInput";
 import Table from "../../components/Table/Table";
 import { BlueButton } from "../../components/Buttons/Buttons";
 import { loadData } from "../../logic/async";
+import { removeDuplicateNumbers } from "../../logic/utils";
 
 function App() {
   const [fields, setFields] = useState<string[]>([]);
@@ -17,6 +18,11 @@ function App() {
     setData(content);
   }
 
+  function removeDupes() {
+    const arrWithoutDupes = removeDuplicateNumbers(data);
+    setData(arrWithoutDupes);
+  }
+
   return (
     <div className="App">
       <CsvInput updateParent={splitData} />
@@ -27,7 +33,12 @@ function App() {
             onClick={() => loadData(data)}
             style={{ margin: '2rem auto' }}
           />
-
+          <BlueButton
+            text="Remove duplicate numbers"
+            onClick={removeDupes}
+            style={{ margin: '2rem auto' }}
+          />
+          <h1>Total companies: {data.length}</h1>
           <Table>
             <Table.Head>
               <Table.Row>

@@ -22,6 +22,7 @@ export async function loadData(data: string[][]) {
   await updateDoc(newQueCompaniesDoc, { totalQueuedCompanies: companiesQuerySnap.size })
 }
 
+
 function generateCompanyDataFromArray(fields: string[]): CompanyData {
   return {
     cui: fields[0],
