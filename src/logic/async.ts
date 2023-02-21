@@ -26,13 +26,13 @@ export async function loadData(data: string[][]) {
 function generateCompanyDataFromArray(fields: string[]): CompanyData {
   return {
     cui: fields[0],
-    name: fields[1],
-    address: fields[2],
-    county: fields[3],
-    nrRegCom: fields[4],
-    postCode: fields[5],
-    phoneNumber: fields[6],
-    registrationDate: fields[7],
+    name: fields[2],
+    address: fields[3],
+    county: 'Romania',
+    nrRegCom: fields[1],
+    postCode: 'fields[5]',
+    phoneNumber: fields[10],
+    registrationDate: fields[12],
     addedToQueDate: new Date()
   }
 }
