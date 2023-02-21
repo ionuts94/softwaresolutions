@@ -38,7 +38,7 @@ export default function CsvInput(
 function parsePhoneNumbers(list: string[][]): string[][] {
   for (let i = 0; i < list.length; i++) {
     if (i === 0) continue;
-    list[i][6] = parsePhoneNumber(list[i][6]);
+    list[i][10] = parsePhoneNumber(list[i][10]);
   }
 
   return list
