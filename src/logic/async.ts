@@ -6,6 +6,7 @@ export async function loadData(data: string[][]) {
   const createQueDocResponse = await addDoc(collection(db, 'que'), {
     dateAdded: new Date(),
     totalSMSSent: 0,
+    sendInOneGo: 30
   });
 
   const newQueCompaniesDoc = doc(db, 'que', createQueDocResponse.id);
